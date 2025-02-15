@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=4 uid="uid://bbhti3ovinsgk"]
+
+[ext_resource type="PackedScene" uid="uid://c3wcoxotyr6py" path="res://Scenes/Terrain/Brackeys Tilemap.tscn" id="1_18brt"]
+[ext_resource type="PackedScene" uid="uid://bfi1xsgbaxkc0" path="res://Scenes/Characters/player.tscn" id="2_c5t4t"]
+[ext_resource type="PackedScene" uid="uid://c71llytmtkwjj" path="res://Scenes/items/coin.tscn" id="3_6j3od"]
+
+[node name="EmptyScene" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_18brt")]
+tile_map_data = PackedByteArray("AAD5/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAABAAAAAAADAAIAAAABAAEAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAD5/wMAAAABAAAAAAD6/wQAAAABAAAAAAD7/wMAAAAAAAEAAAD9/wMAAAABAAEAAAD//wQAAAABAAAAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAD8/wMAAAABAAEAAAD6/wMAAAAAAAEAAAD+/wQAAAABAAEAAAD//wMAAAABAAAAAAABAAQAAAAAAAEAAAAAAAQAAAABAAAAAAAAAAMAAAABAAAAAAD+/wMAAAABAAAAAAD9/wQAAAABAAAAAAD8/wQAAAAAAAEAAAD7/wQAAAABAAAAAAD5/wQAAAABAAEAAAACAAQAAAAAAAEAAAADAAMAAAABAAAAAAADAAQAAAAAAAEAAAABAAEAAAAIAAUAAAD2/wQAAAAAAAEAAAD3/wQAAAABAAEAAAD4/wQAAAAAAAEAAAD4/wMAAAAAAAEAAAD3/wMAAAABAAEAAAD2/wMAAAAAAAEAAAD4/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD2/wIAAAAAAAAAAAACAAAAAAAIAAMAAAD2/wEAAAAIAAMAAAD//wEAAAAIAAMAAAAAAAEAAAAHAAUAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_c5t4t")]
+position = Vector2(-50, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(50, -2)
+
+[node name="coin" parent="." instance=ExtResource("3_6j3od")]
+position = Vector2(-104, 32)
+
+[node name="coin2" parent="." instance=ExtResource("3_6j3od")]
+position = Vector2(-88, 32)
+
+[node name="coin3" parent="." instance=ExtResource("3_6j3od")]
+position = Vector2(-96, 32)
+
+[node name="coin4" parent="." instance=ExtResource("3_6j3od")]
+position = Vector2(-112, 32)
+
+[node name="coin5" parent="." instance=ExtResource("3_6j3od")]
+position = Vector2(-120, 32)

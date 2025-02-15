@@ -1,0 +1,98 @@
+[gd_scene load_steps=18 format=3 uid="uid://bfi1xsgbaxkc0"]
+
+[ext_resource type="Texture2D" uid="uid://bx34iptfveulr" path="res://assets/chracters/mage/mage.png" id="1_41umh"]
+[ext_resource type="Script" path="res://Scenes/Characters/Player.cs" id="1_42gnr"]
+[ext_resource type="Texture2D" uid="uid://cf1q8xjyrvpqt" path="res://assets/chracters/mage/Walk/walk1.png" id="3_1xwpv"]
+[ext_resource type="Texture2D" uid="uid://dolfsxyktxp22" path="res://assets/chracters/mage/Jump/jump1.png" id="3_lp4bg"]
+[ext_resource type="Texture2D" uid="uid://cbnqquhv4lhxw" path="res://assets/chracters/mage/Walk/walk2.png" id="4_iuod0"]
+[ext_resource type="Texture2D" uid="uid://bkot6xdm0m6md" path="res://assets/chracters/mage/Jump/jump2.png" id="4_lpj8h"]
+[ext_resource type="Texture2D" uid="uid://3eja4x1s2mjn" path="res://assets/chracters/mage/Jump/jump3.png" id="5_2456u"]
+[ext_resource type="Texture2D" uid="uid://cukkhbdpv0mjo" path="res://assets/chracters/mage/Walk/walk3.png" id="5_epfwo"]
+[ext_resource type="Texture2D" uid="uid://r14gyvlax64m" path="res://assets/chracters/mage/Jump/jump4.png" id="6_20es5"]
+[ext_resource type="Texture2D" uid="uid://b0j4jd3efk4la" path="res://assets/chracters/mage/Walk/walk4.png" id="6_acv00"]
+[ext_resource type="Texture2D" uid="uid://eglgwpu0de0f" path="res://assets/chracters/mage/Walk/walk5.png" id="7_q4g0q"]
+[ext_resource type="Texture2D" uid="uid://ctb5ql1swwe1i" path="res://assets/chracters/mage/Jump/jump5.png" id="7_xp7sm"]
+[ext_resource type="Texture2D" uid="uid://csv30n40mq6nv" path="res://assets/chracters/mage/Walk/walk6.png" id="8_82jsf"]
+[ext_resource type="Texture2D" uid="uid://cqbl3tiy7hct2" path="res://assets/chracters/mage/Jump/jump6.png" id="8_httye"]
+[ext_resource type="Texture2D" uid="uid://bct08wvv2hklp" path="res://assets/chracters/mage/Jump/jump7.png" id="9_bre3n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmcs5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_41umh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lp4bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lpj8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2456u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_20es5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xp7sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_httye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bre3n")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1xwpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iuod0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_epfwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_acv00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q4g0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_82jsf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sybek"]
+size = Vector2(13, 18.5)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_42gnr")
+Speed = 125.0
+Decelleration = 12.5
+JumpVelocity = -300.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.84217e-14, -15)
+scale = Vector2(0.33, 0.33)
+sprite_frames = SubResource("SpriteFrames_jmcs5")
+animation = &"jump"
+frame = 1
+offset = Vector2(20, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -8.75)
+shape = SubResource("RectangleShape2D_sybek")
