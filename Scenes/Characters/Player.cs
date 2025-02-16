@@ -9,8 +9,6 @@ using Godot;
 
 public partial class Player : CharacterBody2D
 {
-    private AnimatedSprite2D animatedSprite2D;
-
     [Export]
     public float Speed { get; set; } = 300.0f;
 
@@ -20,9 +18,11 @@ public partial class Player : CharacterBody2D
     [Export]
     public float JumpVelocity { get; set; } = -400.0f;
 
+    private AnimatedSprite2D AnimatedSprite2D { get; set; }
+
     public override void _Ready()
     {
-        animatedSprite2D = this.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        AnimatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -40,13 +40,13 @@ public partial class Player : CharacterBody2D
         Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
         if (direction.X != Vector2.Zero.X && IsOnFloor())
         {
-            animatedSprite2D.Play("walk");
+            AnimatedSprite2D.Play("walk");
         }
         else
         {
             if (IsOnFloor())
             {
-                animatedSprite2D.Play("default");
+                AnimatedSprite2D.Play("default");
             }
         }
 
@@ -54,18 +54,18 @@ public partial class Player : CharacterBody2D
         {
             if (direction.X < 0)
             {
-                bool flipping = animatedSprite2D.Scale.X > 0;
+                bool flipping = AnimatedSprite2D.Scale.X > 0;
                 if (flipping)
                 {
-                    animatedSprite2D.Scale = new Vector2(animatedSprite2D.Scale.X * -1, animatedSprite2D.Scale.Y);
+                    AnimatedSprite2D.Scale = new Vector2(AnimatedSprite2D.Scale.X * -1, AnimatedSprite2D.Scale.Y);
                 }
             }
             else
             {
-                bool flipping = animatedSprite2D.Scale.X < 0;
+                bool flipping = AnimatedSprite2D.Scale.X < 0;
                 if (flipping)
                 {
-                    animatedSprite2D.Scale = new Vector2(animatedSprite2D.Scale.X * -1, animatedSprite2D.Scale.Y);
+                    AnimatedSprite2D.Scale = new Vector2(AnimatedSprite2D.Scale.X * -1, AnimatedSprite2D.Scale.Y);
                 }
             }
 
@@ -80,7 +80,7 @@ public partial class Player : CharacterBody2D
         if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
         {
             velocity.Y = JumpVelocity;
-            animatedSprite2D.Play("jump");
+            AnimatedSprite2D.Play("jump");
         }
 
         Velocity = velocity;
