@@ -7,6 +7,7 @@
 namespace Org.Grzanka.Kiddo;
 
 using Godot;
+using org.grzanka.Kiddo;
 using org.grzanka.Kiddo.Audio;
 
 public partial class Coin : Area2D
@@ -25,6 +26,8 @@ public partial class Coin : Area2D
     {
         if (body is Player)
         {
+            LevelOverlay levelManager = GetNode<LevelOverlay>("/root/LevelOverlay");
+            levelManager.IncreaseScore();
             AudioPlayer audioPlayer = GetNode<AudioPlayer>("/root/AudioPlayer");
             audioPlayer.PlaySound(AudioPlayer.Coin);
             QueueFree();
