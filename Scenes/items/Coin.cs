@@ -7,6 +7,7 @@
 namespace Org.Grzanka.Kiddo;
 
 using Godot;
+using org.grzanka.Kiddo.Audio;
 
 public partial class Coin : Area2D
 {
@@ -24,6 +25,8 @@ public partial class Coin : Area2D
     {
         if (body is Player)
         {
+            AudioPlayer audioPlayer = GetNode<AudioPlayer>("/root/AudioPlayer");
+            audioPlayer.PlaySound(AudioPlayer.Coin);
             QueueFree();
         }
     }
