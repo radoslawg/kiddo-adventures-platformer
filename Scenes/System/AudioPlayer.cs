@@ -14,11 +14,14 @@ public partial class AudioPlayer : Node
 {
     public static AudioStream Coin => ResourceLoader.Load("res://assets/audio/coin.wav") as AudioStream;
 
+    public static AudioPlayer Instance { get; private set; }
+
     private List<AudioStreamPlayer2D> AudioPlayers { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        Instance = this;
         AudioPlayers = GetNode<Node>("AudioPlayers")
             .GetChildren()
             .Cast<AudioStreamPlayer2D>()

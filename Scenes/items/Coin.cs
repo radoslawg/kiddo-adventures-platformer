@@ -28,8 +28,7 @@ public partial class Coin : Area2D
         {
             LevelOverlay levelManager = GetNode<LevelOverlay>("/root/LevelOverlay");
             levelManager.IncreaseScore();
-            AudioPlayer audioPlayer = GetNode<AudioPlayer>("/root/AudioPlayer");
-            audioPlayer.PlaySound(AudioPlayer.Coin);
+            AudioPlayer.Instance.PlaySound(AudioPlayer.Coin);
             QueueFree();
         }
     }
