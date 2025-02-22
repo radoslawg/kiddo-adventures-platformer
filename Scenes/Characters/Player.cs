@@ -25,6 +25,15 @@ public partial class Player : CharacterBody2D
         AnimatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
 
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (this.Position.Y > 1000)
+        {
+            this.GetTree().ReloadCurrentScene();
+        }
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         Vector2 velocity = Velocity;
