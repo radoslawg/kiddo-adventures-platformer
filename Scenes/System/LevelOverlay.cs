@@ -35,7 +35,10 @@ public partial class LevelOverlay : Node2D
     {
         if (disposing)
         {
-            Level.Dispose();
+            if (Level != null)
+            {
+                Level.Dispose();
+            }
         }
 
         base.Dispose(disposing);
