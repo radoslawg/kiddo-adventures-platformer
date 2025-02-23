@@ -25,7 +25,7 @@ public partial class Coin : Area2D
 
     public void OnBodyEntered(Node body)
     {
-        if (body is Player)
+        if (body is Player && GetNode<AnimatedSprite2D>("Coin").Visible)
         {
             CoinPickup();
         }
@@ -33,10 +33,10 @@ public partial class Coin : Area2D
 
     private void CoinPickup()
     {
+        GetNode<AnimatedSprite2D>("Coin").Visible = false;
         LevelOverlay levelManager = GetNode<LevelOverlay>("%LevelOverlay");
         levelManager.IncreaseScore();
         AudioPlayer.Instance.PlaySound(AudioPlayer.Coin);
-        GetNode<AnimatedSprite2D>("Coin").Visible = false;
         AnimatedSprite2D anim = GetNode<AnimatedSprite2D>("PickupAnim");
         anim.Visible = true;
         anim.Play("default");
