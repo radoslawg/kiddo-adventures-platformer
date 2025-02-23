@@ -6,6 +6,7 @@
 
 namespace Org.Grzanka.Kiddo;
 
+using System.Threading.Tasks;
 using Godot;
 using org.grzanka.Kiddo;
 using org.grzanka.Kiddo.Audio;
@@ -26,10 +27,23 @@ public partial class Coin : Area2D
     {
         if (body is Player)
         {
-            LevelOverlay levelManager = GetNode<LevelOverlay>("%LevelOverlay");
-            levelManager.IncreaseScore();
-            AudioPlayer.Instance.PlaySound(AudioPlayer.Coin);
-            QueueFree();
+            CoinPickup();
         }
+    }
+
+    private void CoinPickup()
+    {
+        LevelOverlay levelManager = GetNode<LevelOverlay>("%LevelOverlay");
+        levelManager.IncreaseScore();
+        AudioPlayer.Instance.PlaySound(AudioPlayer.Coin);
+        GetNode<AnimatedSprite2D>("Coin").Visible = false;
+        AnimatedSprite2D anim = GetNode<AnimatedSprite2D>("PickupAnim");
+        anim.Visible = true;
+        anim.Play("default");
+    }
+
+    private void OnPickupAnimationFinished()
+    {
+        QueueFree();
     }
 }
