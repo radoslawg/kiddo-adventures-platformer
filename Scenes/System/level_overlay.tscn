@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://diuu4aqr5jk7x"]
+[gd_scene load_steps=4 format=3 uid="uid://diuu4aqr5jk7x"]
 
 [ext_resource type="Script" path="res://Scenes/System/LevelOverlay.cs" id="1_8te5a"]
+[ext_resource type="FontFile" uid="uid://bgj2ryfiw1i1v" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="2_ii6k3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i4uo7"]
+font = ExtResource("2_ii6k3")
 font_size = 8
 
 [node name="LevelOverlay" type="Node2D"]
@@ -18,8 +20,8 @@ label_settings = SubResource("LabelSettings_i4uo7")
 uppercase = true
 
 [node name="Score" type="Label" parent="CanvasLayer"]
-offset_left = 40.0
-offset_right = 78.0
+offset_left = 32.0
+offset_right = 70.0
 offset_bottom = 12.0
 text = " 0"
 label_settings = SubResource("LabelSettings_i4uo7")
