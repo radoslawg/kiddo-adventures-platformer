@@ -31,7 +31,6 @@ public partial class TestLevel : Node2D
         {
             currentCoins = newCoins;
             double intensity = (originalNumberOfCoins - currentCoins) / (double)originalNumberOfCoins;
-            GD.Print(intensity);
             OvaniPlayer.Call("FadeIntensity", intensity, 2);
         }
     }
