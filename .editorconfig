@@ -19,3 +19,5 @@ roslynator_compiler_diagnostic_fixes.enabled = true
 
 # Enable/disable specific compiler diagnostic fix
 #roslynator_compiler_diagnostic_fix.<COMPILER_DIAGNOSTIC_ID>.enabled = true|false
+
+dotnet_sort_system_directives_first = true
