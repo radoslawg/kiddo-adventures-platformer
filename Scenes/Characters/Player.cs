@@ -5,10 +5,21 @@
 //-----------------------------------------------------------------------
 namespace Org.Grzanka.Kiddo;
 
+using System;
+using System.Runtime.InteropServices;
 using Godot;
+using org.grzanka.Kiddo.States;
 
 public partial class Player : CharacterBody2D
 {
+    private enum State
+    {
+        Idle,
+        Walk,
+        Jump,
+        Fall,
+    }
+
     [Export]
     public float Speed { get; set; } = 300.0f;
 
@@ -18,81 +29,152 @@ public partial class Player : CharacterBody2D
     [Export]
     public float JumpVelocity { get; set; } = -400.0f;
 
-    private AnimatedSprite2D AnimatedSprite2D { get; set; }
+    private AnimatedSprite2D PlayerSprite { get; set; }
+
+    private State CurrentState { get; set; } = State.Idle;
 
     public override void _Ready()
     {
-        AnimatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-    }
-
-    public override void _Process(double delta)
-    {
-        base._Process(delta);
-        if (this.Position.Y > 1000)
-        {
-            this.GetTree().ReloadCurrentScene();
-        }
+        PlayerSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        Vector2 velocity = Velocity;
+        ReloadIfOutOfBounds();
 
-        // Add the gravity.
+        switch (CurrentState)
+        {
+            case State.Idle:
+                // HandleIdle(delta); // does nothing for now.
+                break;
+            case State.Walk:
+                HandleWalk(delta);
+                break;
+            case State.Jump:
+                HandleJump(delta);
+                break;
+            case State.Fall:
+                HandleFall(delta);
+                break;
+        }
+
+        TryChangeState();
+        MoveAndSlide();
+    }
+
+    private void TryChangeState()
+    {
+        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+
+        if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+        {
+            TransitionTo(State.Jump);
+            return;
+        }
+
+        if (!IsOnFloor() && CurrentState != State.Jump)
+        {
+            TransitionTo(State.Fall);
+            return;
+        }
+
+        if (IsOnFloor() && (direction.X != Vector2.Zero.X || Velocity.X != Vector2.Zero.X))
+        {
+            TransitionTo(State.Walk);
+            return;
+        }
+
+        if (IsOnFloor() && Velocity == Vector2.Zero)
+        {
+            TransitionTo(State.Idle);
+            return;
+        }
+    }
+
+    private void TransitionTo(State state)
+    {
+        if (CurrentState == state)
+        {
+            return;
+        }
+
+        switch (state)
+        {
+            case State.Idle:
+                PlayerSprite.Play("default");
+                CurrentState = State.Idle;
+                break;
+            case State.Walk:
+                PlayerSprite.Play("walk");
+                CurrentState = State.Walk;
+                break;
+            case State.Jump:
+                Velocity = Velocity with { Y = JumpVelocity };
+                PlayerSprite.Play("jump");
+                CurrentState = State.Jump;
+                break;
+            case State.Fall:
+                PlayerSprite.Play("fall");
+                CurrentState = State.Fall;
+                break;
+        }
+
+        CurrentState = state;
+    }
+
+    private void HandleFall(double delta)
+    {
         if (!IsOnFloor())
         {
-            velocity += GetGravity() * (float)delta;
+            Velocity += GetGravity() * (float)delta;
         }
+    }
 
-        // Get the input direction and handle the movement/deceleration.
-        // As good practice, you should replace UI actions with custom gameplay actions.
+    private void HandleJump(double delta)
+    {
+        HandleWalk(delta);
+        if (!IsOnFloor())
+        {
+            Velocity += GetGravity() * (float)delta;
+        }
+    }
+
+    private void HandleWalk(double delta)
+    {
         Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-        if (direction.X != Vector2.Zero.X && IsOnFloor())
-        {
-            AnimatedSprite2D.Play("walk");
-        }
-        else
-        {
-            if (IsOnFloor())
-            {
-                AnimatedSprite2D.Play("default");
-            }
-        }
 
         if (direction != Vector2.Zero)
         {
             if (direction.X < 0)
             {
-                bool flipping = AnimatedSprite2D.Scale.X > 0;
+                bool flipping = PlayerSprite.Scale.X > 0;
                 if (flipping)
                 {
-                    AnimatedSprite2D.Scale = new Vector2(AnimatedSprite2D.Scale.X * -1, AnimatedSprite2D.Scale.Y);
+                    PlayerSprite.Scale = new Vector2(PlayerSprite.Scale.X * -1, PlayerSprite.Scale.Y);
                 }
             }
             else
             {
-                bool flipping = AnimatedSprite2D.Scale.X < 0;
+                bool flipping = PlayerSprite.Scale.X < 0;
                 if (flipping)
                 {
-                    AnimatedSprite2D.Scale = new Vector2(AnimatedSprite2D.Scale.X * -1, AnimatedSprite2D.Scale.Y);
+                    PlayerSprite.Scale = new Vector2(PlayerSprite.Scale.X * -1, PlayerSprite.Scale.Y);
                 }
             }
 
-            velocity.X = direction.X * Speed;
+            Velocity = Velocity with { X = direction.X * Speed };
         }
         else
         {
-            velocity.X = Mathf.MoveToward(Velocity.X, 0, Decelleration);
+            Velocity = Velocity with { X = Mathf.MoveToward(Velocity.X, 0, Decelleration) };
         }
+    }
 
-        // Handle Jump.
-        if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+    private void ReloadIfOutOfBounds()
+    {
+        if (Position.Y > 150)
         {
-            velocity.Y = JumpVelocity;
-            AnimatedSprite2D.Play("jump");
+            GetTree().ReloadCurrentScene();
         }
-
-        Velocity = velocity;
-        MoveAndSlide();
     }
 }
