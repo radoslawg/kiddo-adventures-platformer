@@ -91,12 +91,12 @@ Decelleration = 12.5
 JumpVelocity = -325.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.84217e-14, -15)
+position = Vector2(1.69407e-21, -14)
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_jmcs5")
 animation = &"walk"
 offset = Vector2(20, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -8.75)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_sybek")
