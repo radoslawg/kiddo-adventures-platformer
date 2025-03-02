@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b2qwimh0bshbp" path="res://assets/imported/skybox/bg2.png" id="3_1qo8c"]
 [ext_resource type="Texture2D" uid="uid://biwuyeivdxpp6" path="res://assets/imported/skybox/bg1.png" id="4_c5c3c"]
 
-[node name="Node" type="Node"]
+[node name="Paralax Sky Clear" type="Node"]
 
 [node name="Sky" type="Parallax2D" parent="."]
 z_index = -20
