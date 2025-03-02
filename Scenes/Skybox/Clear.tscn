@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://drk6dcthmdffe"]
+
+[ext_resource type="Texture2D" uid="uid://xgcr1up4u8ox" path="res://assets/imported/skybox/bg4.png" id="1_vcy8a"]
+[ext_resource type="Texture2D" uid="uid://b17pxhrgfqu17" path="res://assets/imported/skybox/bg3.png" id="2_py0ac"]
+[ext_resource type="Texture2D" uid="uid://b2qwimh0bshbp" path="res://assets/imported/skybox/bg2.png" id="3_1qo8c"]
+[ext_resource type="Texture2D" uid="uid://biwuyeivdxpp6" path="res://assets/imported/skybox/bg1.png" id="4_c5c3c"]
+
+[node name="Node" type="Node"]
+
+[node name="Sky" type="Parallax2D" parent="."]
+z_index = -20
+scroll_scale = Vector2(0.05, 0.05)
+repeat_size = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(104, 56)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_vcy8a")
+region_rect = Rect2(0, 143.534, 16.2369, 112.466)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -18
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(176, 64)
+texture = ExtResource("2_py0ac")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = -16
+scroll_scale = Vector2(0.25, 0.25)
+repeat_size = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(176, 56)
+texture = ExtResource("3_1qo8c")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+z_index = -14
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(160, 48)
+texture = ExtResource("4_c5c3c")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bbhti3ovinsgk"]
+[gd_scene load_steps=10 format=4 uid="uid://bbhti3ovinsgk"]
 
 [ext_resource type="PackedScene" uid="uid://c3wcoxotyr6py" path="res://Scenes/Terrain/Brackeys Tilemap.tscn" id="1_18brt"]
 [ext_resource type="Script" path="res://Scenes/TestLevel.cs" id="1_s4mtn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://assets/Music/OvaniPlugin/OvaniPlayer.gd" id="5_b5sbo"]
 [ext_resource type="Script" path="res://assets/Music/OvaniPlugin/OvaniSong.gd" id="6_01kro"]
 [ext_resource type="Resource" uid="uid://csfmpfw5ky0sh" path="res://assets/Music/A Little Bit (RT 3.234)/A Little Bit.tres" id="7_1qgtl"]
+[ext_resource type="PackedScene" uid="uid://drk6dcthmdffe" path="res://Scenes/Skybox/Clear.tscn" id="9_b1rfc"]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_s4mtn")
@@ -105,3 +106,5 @@ script = ExtResource("5_b5sbo")
 QueuedSongs = Array[ExtResource("6_01kro")]([ExtResource("7_1qgtl")])
 Bus = &"Music"
 LoopQueue = true
+
+[node name="Node" parent="." instance=ExtResource("9_b1rfc")]
