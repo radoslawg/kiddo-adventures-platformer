@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------
-// <copyright file="Coin.cs" company="Radosław Grzanka">
+// <copyright file="Key.cs" company="Radosław Grzanka">
 //     Copyright (c) Radosław Grzanka. Licensed under the GPL-3.0 license.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -7,11 +7,13 @@
 namespace Org.Grzanka.Kiddo;
 
 using Godot;
-using org.grzanka.Kiddo;
 using org.grzanka.Kiddo.Audio;
 
 public partial class Key : Area2D
 {
+    [Signal]
+    public delegate void KeyPickedUpEventHandler(Key key);
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -30,9 +32,14 @@ public partial class Key : Area2D
         }
     }
 
+    public void MakeVisible()
+    {
+        Visible = true;
+    }
+
     private void KeyPickup()
     {
-        GetNode<AnimatedSprite2D>("Key").Visible = false;
+        Visible = false;
 
         // LevelOverlay levelManager = GetNode<LevelOverlay>("%LevelOverlay");
         // levelManager.IncreaseScore();
@@ -40,6 +47,7 @@ public partial class Key : Area2D
         AnimatedSprite2D anim = GetNode<AnimatedSprite2D>("PickupAnim");
         anim.Visible = true;
         anim.Play("default");
+        EmitSignal(nameof(KeyPickedUp), this);
     }
 
     private void OnPickupAnimationFinished()

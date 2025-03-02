@@ -13,6 +13,9 @@ using org.grzanka.Kiddo.Audio;
 
 public partial class Coin : Area2D
 {
+    [Signal]
+    public delegate void CoinPickedUpEventHandler(Coin coin);
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -40,6 +43,7 @@ public partial class Coin : Area2D
         AnimatedSprite2D anim = GetNode<AnimatedSprite2D>("PickupAnim");
         anim.Visible = true;
         anim.Play("default");
+        EmitSignal(nameof(CoinPickedUp), this);
     }
 
     private void OnPickupAnimationFinished()
