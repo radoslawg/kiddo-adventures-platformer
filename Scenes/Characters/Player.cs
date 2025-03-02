@@ -6,9 +6,7 @@
 namespace Org.Grzanka.Kiddo;
 
 using System;
-using System.Runtime.InteropServices;
 using Godot;
-using org.grzanka.Kiddo.States;
 
 public partial class Player : CharacterBody2D
 {
@@ -32,6 +30,8 @@ public partial class Player : CharacterBody2D
     private AnimatedSprite2D PlayerSprite { get; set; }
 
     private State CurrentState { get; set; } = State.Idle;
+
+    private bool DoubleJump { get; set; }
 
     public override void _Ready()
     {
@@ -58,8 +58,8 @@ public partial class Player : CharacterBody2D
                 break;
         }
 
-        TryChangeState();
         MoveAndSlide();
+        TryChangeState();
     }
 
     private void TryChangeState()
@@ -72,7 +72,7 @@ public partial class Player : CharacterBody2D
             return;
         }
 
-        if (!IsOnFloor() && CurrentState != State.Jump)
+        if (!IsOnFloor() && Velocity.Y >= 0)
         {
             TransitionTo(State.Fall);
             return;
@@ -109,11 +109,13 @@ public partial class Player : CharacterBody2D
                 CurrentState = State.Walk;
                 break;
             case State.Jump:
+                DoubleJump = false;
                 Velocity = Velocity with { Y = JumpVelocity };
                 PlayerSprite.Play("jump");
                 CurrentState = State.Jump;
                 break;
             case State.Fall:
+                GD.Print("Falling");
                 PlayerSprite.Play("fall");
                 CurrentState = State.Fall;
                 break;
@@ -136,6 +138,13 @@ public partial class Player : CharacterBody2D
         if (!IsOnFloor())
         {
             Velocity += GetGravity() * (float)delta;
+        }
+
+        if (Input.IsActionJustPressed("ui_accept") && !DoubleJump)
+        {
+            PlayerSprite.Play("jump");
+            DoubleJump = true;
+            Velocity = Velocity with { Y = JumpVelocity };
         }
     }
 

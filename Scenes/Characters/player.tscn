@@ -22,7 +22,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_41umh")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -35,6 +35,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_httye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bre3n")
 }],
 "loop": false,
 "name": &"fall",
@@ -49,18 +52,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_2456u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_20es5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_xp7sm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_httye")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_bre3n")
 }],
 "loop": false,
 "name": &"jump",
@@ -87,7 +78,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sybek"]
@@ -103,7 +94,7 @@ JumpVelocity = -300.0
 position = Vector2(2.84217e-14, -15)
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_jmcs5")
-animation = &"fall"
+animation = &"walk"
 offset = Vector2(20, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
