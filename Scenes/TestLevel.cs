@@ -11,7 +11,9 @@ using System;
 public partial class TestLevel : Node2D
 {
     private int originalNumberOfCoins;
-    int currentCoins;
+    private bool allCoinsCollected;
+
+    private int CurrentCoins { get; set; }
 
     private Node OvaniPlayer { get; set; }
 
@@ -19,7 +21,7 @@ public partial class TestLevel : Node2D
     public override void _Ready()
     {
         originalNumberOfCoins = GetNode<Node>("Coins").GetChildCount();
-        currentCoins = originalNumberOfCoins;
+        CurrentCoins = originalNumberOfCoins;
         OvaniPlayer = GetNode<Node>("OvaniPlayer");
     }
 
@@ -27,11 +29,24 @@ public partial class TestLevel : Node2D
     public override void _Process(double delta)
     {
         int newCoins = GetNode<Node>("Coins").GetChildCount();
-        if (newCoins != currentCoins)
+        if (newCoins != CurrentCoins)
         {
-            currentCoins = newCoins;
-            double intensity = (originalNumberOfCoins - currentCoins) / (double)originalNumberOfCoins;
+            CurrentCoins = newCoins;
+            double intensity = (originalNumberOfCoins - CurrentCoins) / (double)originalNumberOfCoins;
             OvaniPlayer.Call("FadeIntensity", intensity, 2);
+        }
+
+        // Change to one time event
+        if (CurrentCoins == 0 && !allCoinsCollected)
+        {
+            allCoinsCollected = true;
+            foreach (Node key in GetNode<Node>("Keys").GetChildren())
+            {
+                if (key is Area2D)
+                {
+                    ((Area2D)key).Visible = true;
+                }
+            }
         }
     }
 }
