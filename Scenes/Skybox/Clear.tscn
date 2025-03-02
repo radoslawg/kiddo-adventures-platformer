@@ -18,29 +18,29 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_vcy8a")
 region_rect = Rect2(0, 143.534, 16.2369, 112.466)
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Mountains Far" type="Parallax2D" parent="."]
 z_index = -18
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(320, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Mountains Far"]
 position = Vector2(176, 64)
 texture = ExtResource("2_py0ac")
 
-[node name="Parallax2D2" type="Parallax2D" parent="."]
+[node name="Mountains Close" type="Parallax2D" parent="."]
 z_index = -16
 scroll_scale = Vector2(0.25, 0.25)
 repeat_size = Vector2(320, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Mountains Close"]
 position = Vector2(176, 56)
 texture = ExtResource("3_1qo8c")
 
-[node name="Parallax2D3" type="Parallax2D" parent="."]
+[node name="Grass" type="Parallax2D" parent="."]
 z_index = -14
 scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(320, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="Grass"]
 position = Vector2(160, 48)
 texture = ExtResource("4_c5c3c")
