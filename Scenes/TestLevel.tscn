@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://bbhti3ovinsgk"]
+[gd_scene load_steps=13 format=4 uid="uid://bbhti3ovinsgk"]
 
 [ext_resource type="PackedScene" uid="uid://c3wcoxotyr6py" path="res://Scenes/Terrain/Brackeys Tilemap.tscn" id="1_18brt"]
 [ext_resource type="Script" path="res://Scenes/TestLevel.cs" id="1_s4mtn"]
 [ext_resource type="PackedScene" uid="uid://bfi1xsgbaxkc0" path="res://Scenes/Characters/player.tscn" id="2_c5t4t"]
+[ext_resource type="PackedScene" uid="uid://c3ao0x82v1vwt" path="res://Scenes/items/door.tscn" id="2_mr0lj"]
 [ext_resource type="PackedScene" uid="uid://c71llytmtkwjj" path="res://Scenes/items/coin.tscn" id="3_6j3od"]
 [ext_resource type="PackedScene" uid="uid://b1iy2qjlmluyd" path="res://Scenes/Terrain/Kenneys Tilemap.tscn" id="3_etf1i"]
 [ext_resource type="PackedScene" uid="uid://diuu4aqr5jk7x" path="res://Scenes/System/level_overlay.tscn" id="4_lg8jd"]
@@ -14,6 +15,9 @@
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_s4mtn")
+
+[node name="Door" parent="." instance=ExtResource("2_mr0lj")]
+position = Vector2(192, -16)
 
 [node name="TileMap" parent="." instance=ExtResource("1_18brt")]
 z_index = -10
@@ -111,7 +115,7 @@ position = Vector2(40, -48)
 
 [node name="key" parent="Keys" instance=ExtResource("6_e1q6o")]
 visible = false
-position = Vector2(-384, 32)
+position = Vector2(104, -32)
 
 [node name="OvaniPlayer" type="Node" parent="."]
 script = ExtResource("5_b5sbo")

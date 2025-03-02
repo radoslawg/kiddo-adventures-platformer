@@ -33,6 +33,7 @@ public partial class TestLevel : Node2D
         foreach (Org.Grzanka.Kiddo.Key key in GetNode<Node>("Keys").GetChildren().OfType<Org.Grzanka.Kiddo.Key>())
         {
             AllCoinsCollected += key.MakeVisible;
+            key.KeyPickedUp += GetNode<Door>("Door").Open;
         }
 
         originalNumberOfCoins = GetNode<Node>("Coins").GetChildren().OfType<Coin>().Count(c => c.Visible);
