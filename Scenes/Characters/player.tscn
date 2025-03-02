@@ -88,7 +88,7 @@ size = Vector2(13, 18.5)
 script = ExtResource("1_42gnr")
 Speed = 100.0
 Decelleration = 12.5
-JumpVelocity = -300.0
+JumpVelocity = -325.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.84217e-14, -15)
