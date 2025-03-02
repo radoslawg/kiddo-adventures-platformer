@@ -115,7 +115,6 @@ public partial class Player : CharacterBody2D
                 CurrentState = State.Jump;
                 break;
             case State.Fall:
-                GD.Print("Falling");
                 PlayerSprite.Play("fall");
                 CurrentState = State.Fall;
                 break;
