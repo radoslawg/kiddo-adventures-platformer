@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3ao0x82v1vwt"]
+[gd_scene load_steps=4 format=3 uid="uid://c3ao0x82v1vwt"]
 
 [ext_resource type="Script" path="res://Scenes/items/Door.cs" id="1_1cp1b"]
 [ext_resource type="PackedScene" uid="uid://b1iy2qjlmluyd" path="res://Scenes/Terrain/Kenneys Tilemap.tscn" id="1_ycab0"]
 
-[node name="Door" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylp40"]
+size = Vector2(17.5981, 20)
+
+[node name="Door" type="Area2D"]
 script = ExtResource("1_1cp1b")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.23782, -9.20277)
+shape = SubResource("RectangleShape2D_ylp40")
+
 [node name="DoorTilemap" parent="." instance=ExtResource("1_ycab0")]
-tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 10, 0, 7, 0, 0, 0, 0, 0, 254, 255, 0, 0, 10, 0, 5, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 10, 0, 5, 0, 0, 0, 0, 0, 255, 255, 0, 0, 10, 0, 7, 0, 0, 0)
 
 [node name="Lock" parent="." instance=ExtResource("1_ycab0")]
 position = Vector2(2, -2)
