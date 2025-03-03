@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1iy2qjlmluyd"]
+[gd_scene load_steps=5 format=3 uid="uid://b1iy2qjlmluyd"]
 
 [ext_resource type="Texture2D" uid="uid://dkkfbnar8s3b1" path="res://assets/imported/terrain/Kenney_terrain_tilemap.png" id="1_kwoq6"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_02e41"]
+tile_data = PackedInt32Array(0, 655360, 5, 65536, 655360, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cvm6e"]
 texture = ExtResource("1_kwoq6")
@@ -188,6 +191,7 @@ texture_region_size = Vector2i(18, 18)
 
 [sub_resource type="TileSet" id="TileSet_i2ypd"]
 sources/0 = SubResource("TileSetAtlasSource_cvm6e")
+pattern_0 = SubResource("TileMapPattern_02e41")
 
 [node name="KenneysTilemap" type="TileMapLayer"]
 tile_set = SubResource("TileSet_i2ypd")
