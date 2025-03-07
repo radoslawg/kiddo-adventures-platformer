@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Kiddo Adventures Platformer"
-run/main_scene="uid://0mxfj6r56kcc"
+run/main_scene="uid://b8md7hki0v378"
 config/features=PackedStringArray("4.4", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 AudioPlayer="*res://Scenes/System/audio_player.tscn"
+Transitions="*res://Scenes/System/transitions.tscn"
 
 [display]
 

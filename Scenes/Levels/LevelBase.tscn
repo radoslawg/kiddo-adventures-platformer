@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://2raompuw26fq"]
+[gd_scene load_steps=7 format=3 uid="uid://2raompuw26fq"]
 
 [ext_resource type="Script" uid="uid://c7mhudvqb0tf0" path="res://Scenes/Levels/LevelBase.cs" id="1_ami44"]
 [ext_resource type="PackedScene" uid="uid://bfi1xsgbaxkc0" path="res://Scenes/Characters/player.tscn" id="2_encki"]
 [ext_resource type="PackedScene" uid="uid://diuu4aqr5jk7x" path="res://Scenes/System/level_overlay.tscn" id="3_7t6so"]
+[ext_resource type="Script" uid="uid://dks8q6nehiegw" path="res://assets/Music/OvaniPlugin/OvaniPlayer.gd" id="4_ks63r"]
+[ext_resource type="Script" uid="uid://cedytvphyb23e" path="res://assets/Music/OvaniPlugin/OvaniSong.gd" id="5_bybyf"]
+[ext_resource type="Resource" uid="uid://csfmpfw5ky0sh" path="res://assets/Music/A Little Bit (RT 3.234)/A Little Bit.tres" id="6_j6j3i"]
 
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_ami44")
@@ -15,3 +18,10 @@ PlayerScene = ExtResource("2_encki")
 [node name="LevelOverlay" parent="." instance=ExtResource("3_7t6so")]
 unique_name_in_owner = true
 visible = false
+
+[node name="OvaniPlayer" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("4_ks63r")
+QueuedSongs = Array[ExtResource("5_bybyf")]([ExtResource("6_j6j3i")])
+Bus = &"Music"
+LoopQueue = true

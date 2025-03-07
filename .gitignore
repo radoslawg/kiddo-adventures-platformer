@@ -37,4 +37,5 @@ mono_crash.*.json
 .history
 .ionide
 
+.old
 # End of https://www.toptal.com/developers/gitignore/api/godot,visualstudiocode

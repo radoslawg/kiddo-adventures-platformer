@@ -33,6 +33,8 @@ public partial class Player : CharacterBody2D
     [Export]
     public float JumpVelocity { get; set; } = -400.0f;
 
+    public Door IsOnDoor { get; set; }
+
     private AnimatedSprite2D PlayerSprite { get; set; }
 
     private RemoteTransform2D RemoteTransform2D { get; set; }
@@ -95,6 +97,12 @@ public partial class Player : CharacterBody2D
         if (!IsOnFloor() && Velocity.Y >= 0)
         {
             TransitionTo(State.Fall);
+            return;
+        }
+
+        if (IsOnDoor != null && IsOnFloor() && Input.IsActionJustPressed("move_enter"))
+        {
+            IsOnDoor.GoToNextLevel().ConfigureAwait(false);
             return;
         }
 

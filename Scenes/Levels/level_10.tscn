@@ -1,105 +1,97 @@
-[gd_scene load_steps=10 format=4 uid="uid://0mxfj6r56kcc"]
+[gd_scene load_steps=7 format=4 uid="uid://0mxfj6r56kcc"]
 
-[ext_resource type="PackedScene" uid="uid://2raompuw26fq" path="res://Scenes/Levels/LevelBase.tscn" id="1_tlcug"]
-[ext_resource type="PackedScene" uid="uid://c3wcoxotyr6py" path="res://Scenes/Terrain/Brackeys Tilemap.tscn" id="2_4dpyx"]
-[ext_resource type="PackedScene" uid="uid://c71llytmtkwjj" path="res://Scenes/items/coin.tscn" id="3_jv26f"]
-[ext_resource type="PackedScene" uid="uid://rcgts4rr6yrx" path="res://Scenes/items/key.tscn" id="4_rb0md"]
-[ext_resource type="Script" uid="uid://dks8q6nehiegw" path="res://assets/Music/OvaniPlugin/OvaniPlayer.gd" id="5_u5ghp"]
-[ext_resource type="Script" uid="uid://cedytvphyb23e" path="res://assets/Music/OvaniPlugin/OvaniSong.gd" id="6_hwvp3"]
-[ext_resource type="Resource" uid="uid://csfmpfw5ky0sh" path="res://assets/Music/A Little Bit (RT 3.234)/A Little Bit.tres" id="7_afv7b"]
-[ext_resource type="PackedScene" uid="uid://drk6dcthmdffe" path="res://Scenes/Skybox/Clear.tscn" id="8_7r2dd"]
-[ext_resource type="PackedScene" uid="uid://c3ao0x82v1vwt" path="res://Scenes/items/door.tscn" id="9_rb0md"]
+[ext_resource type="PackedScene" uid="uid://2raompuw26fq" path="res://Scenes/Levels/LevelBase.tscn" id="1_4c8hl"]
+[ext_resource type="PackedScene" uid="uid://c3wcoxotyr6py" path="res://Scenes/Terrain/Brackeys Tilemap.tscn" id="2_snwp0"]
+[ext_resource type="PackedScene" uid="uid://c71llytmtkwjj" path="res://Scenes/items/coin.tscn" id="3_2fy10"]
+[ext_resource type="PackedScene" uid="uid://rcgts4rr6yrx" path="res://Scenes/items/key.tscn" id="4_l0dhx"]
+[ext_resource type="PackedScene" uid="uid://drk6dcthmdffe" path="res://Scenes/Skybox/Clear.tscn" id="5_p60k7"]
+[ext_resource type="PackedScene" uid="uid://c3ao0x82v1vwt" path="res://Scenes/items/door.tscn" id="6_bla2a"]
 
-[node name="Level1" instance=ExtResource("1_tlcug")]
+[node name="Level1" instance=ExtResource("1_4c8hl")]
 
-[node name="TileMap" parent="." index="2" instance=ExtResource("2_4dpyx")]
+[node name="TileMap" parent="." index="2" instance=ExtResource("2_snwp0")]
 z_index = -10
 tile_map_data = PackedByteArray("AAD5/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAABAAAAAAADAAIAAAABAAEAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAD5/wMAAAABAAAAAAD6/wQAAAABAAAAAAD7/wMAAAAAAAEAAAD9/wMAAAABAAEAAAD//wQAAAABAAAAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAD8/wMAAAABAAEAAAD6/wMAAAAAAAEAAAD+/wQAAAABAAEAAAD//wMAAAABAAAAAAABAAQAAAAAAAEAAAAAAAQAAAABAAAAAAAAAAMAAAABAAAAAAD+/wMAAAABAAAAAAD9/wQAAAABAAAAAAD8/wQAAAAAAAEAAAD7/wQAAAABAAAAAAD5/wQAAAABAAEAAAACAAQAAAAAAAEAAAADAAMAAAABAAAAAAADAAQAAAAAAAEAAAABAAEAAAAIAAUAAAD2/wQAAAAAAAEAAAD3/wQAAAABAAEAAAD4/wQAAAAAAAEAAAD4/wMAAAAAAAEAAAD3/wMAAAABAAEAAAD2/wMAAAAAAAEAAAD4/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD2/wIAAAAAAAAAAAACAAAAAAAIAAMAAAD2/wEAAAAIAAMAAAD//wEAAAAIAAMAAAAAAAEAAAAHAAUAAAD1/wMAAAABAAEAAAD0/wMAAAABAAEAAADz/wMAAAABAAEAAADy/wMAAAAAAAEAAADx/wMAAAABAAEAAADw/wMAAAABAAAAAADw/wQAAAAAAAEAAADx/wQAAAABAAEAAADy/wQAAAABAAAAAADz/wQAAAABAAEAAAD0/wQAAAAAAAEAAAD1/wQAAAAAAAEAAAAJAAQAAAABAAEAAAAJAAMAAAABAAEAAAAJAAIAAAAAAAEAAAAJAAEAAAABAAAAAAAJAAAAAAABAAEAAAAJAP//AAABAAEAAAAIAAQAAAAAAAEAAAAIAAMAAAABAAAAAAAIAAIAAAAAAAEAAAAIAAEAAAABAAEAAAAIAAAAAAABAAAAAAAIAP//AAAAAAEAAAAHAAQAAAABAAEAAAAHAAMAAAABAAAAAAAHAAIAAAABAAEAAAAHAAEAAAAAAAEAAAAHAAAAAAAAAAEAAAAHAP//AAABAAAAAAAGAAQAAAABAAEAAAAGAAMAAAAAAAEAAAAGAAIAAAABAAAAAAAGAAEAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAABAAEAAAAFAAQAAAABAAAAAAAFAAMAAAABAAAAAAAFAAIAAAABAAEAAAAFAAEAAAAAAAEAAAAFAAAAAAAAAAEAAAAFAP//AAABAAAAAAAEAAQAAAAAAAEAAAAEAAMAAAABAAAAAAAEAAIAAAABAAAAAAAEAAEAAAABAAEAAAAEAAAAAAAAAAEAAAAEAP//AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAABAP7/AAAAAAEAAAAAAP7/AAABAAAAAAD///7/AAAAAAEAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAAAAAD+//r/AAAAAAAAAAD9//r/AAAAAAAAAAD8//r/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAAAPj/AAAAAAAAAAD1/wIAAAAAAAAAAAD0/wIAAAAAAAAAAADz/wIAAAAAAAAAAADy/wIAAAAAAAAAAADx/wIAAAAAAAAAAADw/wIAAAAAAAAAAAD+//7/AAAAAAEAAAD9//7/AAABAAAAAAD8//7/AAABAAAAAAD7//7/AAABAAEAAAAJAAcAAAAAAAEAAAAJAAYAAAABAAEAAAAJAAUAAAAAAAEAAAAIAAcAAAABAAAAAAAIAAYAAAAAAAEAAAAIAAUAAAABAAAAAAAHAAcAAAABAAEAAAAHAAYAAAAAAAEAAAAHAAUAAAAAAAEAAAAGAAcAAAABAAEAAAAGAAYAAAABAAEAAAAGAAUAAAAAAAEAAAAFAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAFAAUAAAABAAAAAAAEAAcAAAAAAAEAAAAEAAYAAAABAAAAAAAEAAUAAAAAAAEAAAADAAcAAAABAAAAAAADAAYAAAAAAAEAAAADAAUAAAAAAAEAAAACAAcAAAABAAEAAAACAAYAAAAAAAEAAAACAAUAAAABAAAAAAABAAcAAAABAAAAAAABAAYAAAAAAAEAAAABAAUAAAABAAAAAAAAAAcAAAABAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAABAAAAAAD//wcAAAAAAAEAAAD//wYAAAABAAEAAAD//wUAAAABAAAAAAD+/wcAAAABAAAAAAD+/wYAAAABAAAAAAD+/wUAAAABAAAAAAD9/wcAAAAAAAEAAAD9/wYAAAABAAAAAAD9/wUAAAAAAAEAAAD8/wcAAAABAAEAAAD8/wYAAAABAAEAAAD8/wUAAAABAAEAAAD7/wcAAAABAAAAAAD7/wYAAAAAAAEAAAD7/wUAAAABAAEAAAD6/wcAAAABAAEAAAD6/wYAAAAAAAEAAAD6/wUAAAAAAAEAAAD5/wcAAAABAAAAAAD5/wYAAAAAAAEAAAD5/wUAAAAAAAEAAAD4/wcAAAAAAAEAAAD4/wYAAAABAAEAAAD4/wUAAAABAAEAAAD3/wcAAAABAAAAAAD3/wYAAAAAAAEAAAD3/wUAAAAAAAEAAAD2/wcAAAABAAAAAAD2/wYAAAABAAAAAAD2/wUAAAABAAAAAAD1/wcAAAAAAAEAAAD1/wYAAAABAAEAAAD1/wUAAAAAAAEAAAD0/wcAAAAAAAEAAAD0/wYAAAABAAAAAAD0/wUAAAAAAAEAAADz/wcAAAABAAEAAADz/wYAAAAAAAEAAADz/wUAAAAAAAEAAADy/wcAAAABAAEAAADy/wYAAAABAAEAAADy/wUAAAABAAEAAADx/wcAAAABAAEAAADx/wYAAAAAAAEAAADx/wUAAAABAAAAAADw/wcAAAABAAAAAADw/wYAAAABAAEAAADw/wUAAAABAAEAAAD6//7/AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAIAAAAAAAAAAAANAAcAAAAAAAEAAAANAAYAAAABAAAAAAANAAUAAAAAAAEAAAANAAQAAAABAAEAAAANAAMAAAABAAEAAAANAAIAAAABAAAAAAANAAEAAAABAAEAAAANAAAAAAAAAAEAAAAMAAcAAAAAAAEAAAAMAAYAAAABAAEAAAAMAAUAAAABAAAAAAAMAAQAAAABAAAAAAAMAAMAAAABAAAAAAAMAAIAAAABAAEAAAAMAAEAAAABAAEAAAAMAAAAAAAAAAEAAAALAAcAAAABAAAAAAALAAYAAAABAAAAAAALAAUAAAAAAAEAAAALAAQAAAABAAAAAAALAAMAAAABAAEAAAALAAIAAAABAAEAAAALAAEAAAABAAAAAAALAAAAAAAAAAEAAAAKAAcAAAABAAAAAAAKAAYAAAABAAAAAAAKAAUAAAABAAAAAAAKAAQAAAABAAEAAAAKAAMAAAAAAAEAAAAKAAIAAAABAAAAAAAKAAEAAAAAAAEAAAAKAAAAAAABAAAAAAAPAAcAAAABAAAAAAAPAAYAAAAAAAEAAAAPAAUAAAABAAEAAAAPAAQAAAAAAAEAAAAPAAMAAAABAAEAAAAPAAIAAAABAAAAAAAPAAEAAAABAAEAAAAOAAcAAAAAAAEAAAAOAAYAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAQAAAABAAEAAAAOAAMAAAABAAEAAAAOAAIAAAABAAAAAAAOAAEAAAABAAEAAAARAAcAAAABAAEAAAARAAYAAAAAAAEAAAARAAUAAAAAAAEAAAARAAQAAAABAAEAAAARAAMAAAABAAEAAAARAAIAAAABAAAAAAAQAAcAAAABAAAAAAAQAAYAAAABAAAAAAAQAAUAAAABAAEAAAAQAAQAAAAAAAEAAAAQAAMAAAABAAEAAAAQAAIAAAABAAEAAAASAAcAAAAAAAEAAAASAAYAAAABAAAAAAASAAUAAAAAAAEAAAASAAQAAAABAAEAAAASAAMAAAAAAAEAAADv/wcAAAABAAAAAADv/wYAAAABAAEAAADv/wUAAAAAAAEAAADv/wQAAAABAAEAAADv/wMAAAAAAAEAAADu/wcAAAABAAAAAADu/wYAAAABAAAAAADu/wUAAAAAAAEAAADu/wQAAAABAAEAAADu/wMAAAABAAAAAADt/wcAAAABAAEAAADt/wYAAAABAAEAAADt/wUAAAABAAEAAADt/wQAAAABAAEAAADt/wMAAAAAAAEAAADs/wcAAAAAAAEAAADs/wYAAAABAAEAAADs/wUAAAABAAEAAADs/wQAAAAAAAEAAADs/wMAAAABAAAAAADr/wcAAAAAAAEAAADr/wYAAAABAAEAAADr/wUAAAAAAAEAAADr/wQAAAABAAEAAADr/wMAAAABAAAAAADq/wcAAAABAAEAAADq/wYAAAABAAAAAADq/wUAAAAAAAEAAADq/wQAAAABAAAAAADq/wMAAAABAAEAAADp/wcAAAABAAAAAADp/wYAAAABAAEAAADp/wUAAAAAAAEAAADp/wQAAAABAAAAAADp/wMAAAABAAAAAADo/wcAAAABAAAAAADo/wYAAAABAAAAAADo/wUAAAABAAEAAADo/wQAAAAAAAEAAADo/wMAAAAAAAEAAADn/wcAAAAAAAEAAADn/wYAAAAAAAEAAADn/wUAAAABAAEAAADn/wQAAAABAAEAAADn/wMAAAABAAAAAADm/wcAAAAAAAEAAADm/wYAAAAAAAEAAADm/wUAAAAAAAEAAADm/wQAAAABAAAAAADm/wMAAAABAAEAAADl/wcAAAABAAAAAADl/wYAAAABAAAAAADl/wUAAAABAAEAAADl/wQAAAABAAAAAADl/wMAAAABAAAAAADk/wcAAAAAAAEAAADk/wYAAAABAAEAAADk/wUAAAAAAAEAAADk/wQAAAABAAAAAADk/wMAAAAAAAEAAADj/wcAAAABAAEAAADj/wYAAAABAAAAAADj/wUAAAABAAAAAADj/wQAAAABAAEAAADj/wMAAAAAAAEAAADi/wcAAAABAAEAAADi/wYAAAABAAEAAADi/wUAAAABAAAAAADi/wQAAAABAAEAAADi/wMAAAABAAAAAADv/wIAAAAAAAAAAADu/wIAAAAAAAAAAADt/wIAAAAAAAAAAADs/wIAAAAAAAAAAADr/wIAAAAAAAAAAADq/wIAAAAAAAAAAADp/wIAAAAAAAAAAAD3////AAAAAAAAAAD2////AAAAAAAAAAD1////AAAAAAAAAAD0////AAAAAAAAAADy//3/AAAAAAAAAADx//3/AAAAAAAAAADw//3/AAAAAAAAAADx//r/AAAAAAAAAADo/wIAAAAAAAAAAADn/wIAAAAAAAAAAADm/wIAAAAAAAAAAADl/wIAAAAAAAAAAADk/wIAAAAAAAAAAADj/wIAAAAAAAAAAADi/wIAAAAAAAAAAADt/wEAAAADAAgAAADt/wAAAAADAAcAAADt////AAADAAYAAADt//7/AAADAAUAAADu//7/AAAEAAUAAADt//3/AAADAAQAAADs//7/AAACAAUAAADs//3/AAACAAQAAADu//3/AAAEAAQAAADu/wEAAAABAAYAAADp/wEAAAABAAUAAAD3//7/AAABAAUAAADs/wEAAAAEAAgAAADh/wMAAAAEAAkAAADg/wMAAAAEAAkAAADf/wMAAAAEAAkAAADh/wQAAAAEAAoAAADg/wQAAAAEAAoAAADf/wQAAAAEAAoAAADf/wUAAAAEAAoAAADf/wYAAAAEAAoAAADf/wcAAAAEAAoAAADg/wUAAAAEAAoAAADg/wYAAAAEAAoAAADg/wcAAAAEAAoAAADh/wUAAAAEAAoAAADh/wYAAAAEAAoAAADh/wcAAAAEAAoAAAATAAQAAAAEAAoAAAATAAUAAAAEAAoAAAATAAYAAAAEAAoAAAATAAcAAAAEAAoAAAAUAAQAAAAEAAoAAAAUAAUAAAAEAAoAAAAUAAYAAAAEAAoAAAAUAAcAAAAEAAoAAAAVAAQAAAAEAAoAAAAVAAUAAAAEAAoAAAAVAAYAAAAEAAoAAAAVAAcAAAAEAAoAAAAWAAQAAAAEAAoAAAAWAAUAAAAEAAoAAAAWAAYAAAAEAAoAAAAWAAcAAAAEAAoAAAAXAAQAAAAEAAoAAAAXAAUAAAAEAAoAAAAXAAYAAAAEAAoAAAAXAAcAAAAEAAoAAAAYAAQAAAAEAAoAAAAYAAUAAAAEAAoAAAAYAAYAAAAEAAoAAAAYAAcAAAAEAAoAAAATAAMAAAAEAAkAAAAUAAMAAAAEAAkAAAAVAAMAAAAEAAkAAAAWAAMAAAAEAAkAAAAXAAMAAAAEAAkAAAAYAAMAAAAEAAkAAAD+/wEAAAAIAAYAAAALAP7/AAAIAAYAAAAIAP3/AAAHAAUAAAAOAP//AAAIAAcAAAAPAP//AAABAAQAAAAJAP3/AAABAAUAAAAHAP3/AAAHAAYAAAA=")
 
 [node name="Coins" type="Node" parent="." index="3"]
 
-[node name="coin" parent="Coins" index="0" instance=ExtResource("3_jv26f")]
+[node name="coin" parent="Coins" index="0" instance=ExtResource("3_2fy10")]
 position = Vector2(-112, 32)
 
-[node name="coin2" parent="Coins" index="1" instance=ExtResource("3_jv26f")]
+[node name="coin2" parent="Coins" index="1" instance=ExtResource("3_2fy10")]
 position = Vector2(-80, 32)
 
-[node name="coin3" parent="Coins" index="2" instance=ExtResource("3_jv26f")]
+[node name="coin3" parent="Coins" index="2" instance=ExtResource("3_2fy10")]
 position = Vector2(-96, 32)
 
-[node name="coin4" parent="Coins" index="3" instance=ExtResource("3_jv26f")]
+[node name="coin4" parent="Coins" index="3" instance=ExtResource("3_2fy10")]
 position = Vector2(-128, 32)
 
-[node name="coin5" parent="Coins" index="4" instance=ExtResource("3_jv26f")]
+[node name="coin5" parent="Coins" index="4" instance=ExtResource("3_2fy10")]
 position = Vector2(-143, 32)
 
-[node name="coin16" parent="Coins" index="5" instance=ExtResource("3_jv26f")]
+[node name="coin16" parent="Coins" index="5" instance=ExtResource("3_2fy10")]
 position = Vector2(-208, 32)
 
-[node name="coin17" parent="Coins" index="6" instance=ExtResource("3_jv26f")]
+[node name="coin17" parent="Coins" index="6" instance=ExtResource("3_2fy10")]
 position = Vector2(-88, -32)
 
-[node name="coin18" parent="Coins" index="7" instance=ExtResource("3_jv26f")]
+[node name="coin18" parent="Coins" index="7" instance=ExtResource("3_2fy10")]
 position = Vector2(-248, -48)
 
-[node name="coin19" parent="Coins" index="8" instance=ExtResource("3_jv26f")]
+[node name="coin19" parent="Coins" index="8" instance=ExtResource("3_2fy10")]
 position = Vector2(-232, -96)
 
-[node name="coin20" parent="Coins" index="9" instance=ExtResource("3_jv26f")]
+[node name="coin20" parent="Coins" index="9" instance=ExtResource("3_2fy10")]
 position = Vector2(-232, -48)
 
-[node name="coin21" parent="Coins" index="10" instance=ExtResource("3_jv26f")]
+[node name="coin21" parent="Coins" index="10" instance=ExtResource("3_2fy10")]
 position = Vector2(-168, -16)
 
-[node name="coin22" parent="Coins" index="11" instance=ExtResource("3_jv26f")]
+[node name="coin22" parent="Coins" index="11" instance=ExtResource("3_2fy10")]
 position = Vector2(-152, -16)
 
-[node name="coin23" parent="Coins" index="12" instance=ExtResource("3_jv26f")]
+[node name="coin23" parent="Coins" index="12" instance=ExtResource("3_2fy10")]
 position = Vector2(-160, 32)
 
-[node name="coin6" parent="Coins" index="13" instance=ExtResource("3_jv26f")]
+[node name="coin6" parent="Coins" index="13" instance=ExtResource("3_2fy10")]
 position = Vector2(8, -128)
 
-[node name="coin7" parent="Coins" index="14" instance=ExtResource("3_jv26f")]
+[node name="coin7" parent="Coins" index="14" instance=ExtResource("3_2fy10")]
 position = Vector2(-40, -96)
 
-[node name="coin14" parent="Coins" index="15" instance=ExtResource("3_jv26f")]
+[node name="coin14" parent="Coins" index="15" instance=ExtResource("3_2fy10")]
 position = Vector2(-24, -96)
 
-[node name="coin15" parent="Coins" index="16" instance=ExtResource("3_jv26f")]
+[node name="coin15" parent="Coins" index="16" instance=ExtResource("3_2fy10")]
 position = Vector2(-56, -96)
 
-[node name="coin8" parent="Coins" index="17" instance=ExtResource("3_jv26f")]
+[node name="coin8" parent="Coins" index="17" instance=ExtResource("3_2fy10")]
 position = Vector2(-40, -48)
 
-[node name="coin9" parent="Coins" index="18" instance=ExtResource("3_jv26f")]
+[node name="coin9" parent="Coins" index="18" instance=ExtResource("3_2fy10")]
 position = Vector2(-24, -48)
 
-[node name="coin10" parent="Coins" index="19" instance=ExtResource("3_jv26f")]
+[node name="coin10" parent="Coins" index="19" instance=ExtResource("3_2fy10")]
 position = Vector2(-8, -48)
 
-[node name="coin11" parent="Coins" index="20" instance=ExtResource("3_jv26f")]
+[node name="coin11" parent="Coins" index="20" instance=ExtResource("3_2fy10")]
 position = Vector2(8, -48)
 
-[node name="coin12" parent="Coins" index="21" instance=ExtResource("3_jv26f")]
+[node name="coin12" parent="Coins" index="21" instance=ExtResource("3_2fy10")]
 position = Vector2(24, -48)
 
-[node name="coin13" parent="Coins" index="22" instance=ExtResource("3_jv26f")]
+[node name="coin13" parent="Coins" index="22" instance=ExtResource("3_2fy10")]
 position = Vector2(40, -48)
 
 [node name="Keys" type="Node" parent="." index="4"]
 
-[node name="key" parent="Keys" index="0" instance=ExtResource("4_rb0md")]
+[node name="key" parent="Keys" index="0" instance=ExtResource("4_l0dhx")]
 visible = false
 position = Vector2(104, -32)
 
-[node name="OvaniPlayer" type="Node" parent="." index="5"]
-script = ExtResource("5_u5ghp")
-QueuedSongs = Array[ExtResource("6_hwvp3")]([ExtResource("7_afv7b")])
-Bus = &"Music"
-LoopQueue = true
+[node name="Paralax Sky Clear" parent="." index="5" instance=ExtResource("5_p60k7")]
 
-[node name="Paralax Sky Clear" parent="." index="6" instance=ExtResource("8_7r2dd")]
-
-[node name="Door" parent="." index="8" instance=ExtResource("9_rb0md")]
+[node name="Door" parent="." index="7" instance=ExtResource("6_bla2a")]
 position = Vector2(208, -16)
+NextLevel = "uid://b8md7hki0v378"
