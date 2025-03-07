@@ -14,11 +14,14 @@ position = Vector2(8.23782, -9.20277)
 shape = SubResource("RectangleShape2D_ylp40")
 
 [node name="DoorTilemap" parent="." instance=ExtResource("1_ycab0")]
+z_index = -5
 tile_map_data = PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 10, 0, 5, 0, 0, 0, 0, 0, 255, 255, 0, 0, 10, 0, 7, 0, 0, 0)
 
 [node name="Lock" parent="." instance=ExtResource("1_ycab0")]
+z_index = -4
 position = Vector2(2, -2)
 scale = Vector2(0.75, 0.75)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 8, 0, 1, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="." to="." method="OnBodyExited"]

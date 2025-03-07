@@ -50,4 +50,12 @@ public partial class Door : Node2D
             ((Player)body).IsOnDoor = this;
         }
     }
+
+    public void OnBodyExited(Node body)
+    {
+        if (body is Player)
+        {
+            ((Player)body).IsOnDoor = null;
+        }
+    }
 }
