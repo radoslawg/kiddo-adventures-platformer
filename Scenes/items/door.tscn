@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3ao0x82v1vwt"]
 
-[ext_resource type="Script" path="res://Scenes/items/Door.cs" id="1_1cp1b"]
+[ext_resource type="Script" uid="uid://bceet8uxo5sf3" path="res://Scenes/items/Door.cs" id="1_1cp1b"]
 [ext_resource type="PackedScene" uid="uid://b1iy2qjlmluyd" path="res://Scenes/Terrain/Kenneys Tilemap.tscn" id="1_ycab0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylp40"]

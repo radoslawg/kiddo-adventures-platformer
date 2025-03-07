@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bfi1xsgbaxkc0"]
 
 [ext_resource type="Texture2D" uid="uid://bx34iptfveulr" path="res://assets/chracters/mage/mage.png" id="1_41umh"]
-[ext_resource type="Script" path="res://Scenes/Characters/Player.cs" id="1_42gnr"]
+[ext_resource type="Script" uid="uid://tgxguvet8j6" path="res://Scenes/Characters/Player.cs" id="1_42gnr"]
 [ext_resource type="Texture2D" uid="uid://cf1q8xjyrvpqt" path="res://assets/chracters/mage/Walk/walk1.png" id="3_1xwpv"]
 [ext_resource type="Texture2D" uid="uid://dolfsxyktxp22" path="res://assets/chracters/mage/Jump/jump1.png" id="3_lp4bg"]
 [ext_resource type="Texture2D" uid="uid://cbnqquhv4lhxw" path="res://assets/chracters/mage/Walk/walk2.png" id="4_iuod0"]

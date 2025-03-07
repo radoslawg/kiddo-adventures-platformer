@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://diuu4aqr5jk7x"]
 
-[ext_resource type="Script" path="res://Scenes/System/LevelOverlay.cs" id="1_8te5a"]
+[ext_resource type="Script" uid="uid://cca41143dgrwy" path="res://Scenes/System/LevelOverlay.cs" id="1_8te5a"]
 [ext_resource type="FontFile" uid="uid://bgj2ryfiw1i1v" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="2_ii6k3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i4uo7"]

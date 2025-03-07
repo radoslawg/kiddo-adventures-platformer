@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://sgpn2j301gvd"]
 
-[ext_resource type="Script" path="res://Scenes/System/AudioPlayer.cs" id="1_4x1np"]
+[ext_resource type="Script" uid="uid://cd2f4pnu5pqx" path="res://Scenes/System/AudioPlayer.cs" id="1_4x1np"]
 
 [node name="AudioPlayer" type="Node"]
 script = ExtResource("1_4x1np")

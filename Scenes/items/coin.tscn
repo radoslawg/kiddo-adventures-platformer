@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://c71llytmtkwjj"]
 
 [ext_resource type="Texture2D" uid="uid://b1h11tcnsq4y4" path="res://assets/items/coin.png" id="1_2aasy"]
-[ext_resource type="Script" path="res://Scenes/items/Coin.cs" id="1_waqxp"]
+[ext_resource type="Script" uid="uid://cpi1up2tuhqeh" path="res://Scenes/items/Coin.cs" id="1_waqxp"]
 [ext_resource type="Texture2D" uid="uid://nloiu2142yi3" path="res://assets/items/yellow_puff_anim.png" id="3_01sux"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtnr1"]
