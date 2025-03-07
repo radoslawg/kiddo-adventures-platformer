@@ -7,6 +7,7 @@ namespace Org.Grzanka.Kiddo;
 
 using System;
 using Godot;
+using org.grzanka.Kiddo.Audio;
 
 public partial class Player : CharacterBody2D
 {
@@ -17,6 +18,9 @@ public partial class Player : CharacterBody2D
         Jump,
         Fall,
     }
+
+    [Export]
+    public AudioStream JumpSound { get; set; }
 
     [Export]
     public float Speed { get; set; } = 300.0f;
@@ -109,6 +113,7 @@ public partial class Player : CharacterBody2D
                 CurrentState = State.Walk;
                 break;
             case State.Jump:
+                AudioPlayer.Instance.PlaySound(JumpSound);
                 DoubleJump = false;
                 Velocity = Velocity with { Y = JumpVelocity };
                 PlayerSprite.Play("jump");
@@ -141,6 +146,7 @@ public partial class Player : CharacterBody2D
 
         if (Input.IsActionJustPressed("move_jump") && !DoubleJump)
         {
+            AudioPlayer.Instance.PlaySound(JumpSound);
             PlayerSprite.Play("jump");
             DoubleJump = true;
             Velocity = Velocity with { Y = JumpVelocity };

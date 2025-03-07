@@ -12,8 +12,6 @@ using Godot;
 
 public partial class AudioPlayer : Node
 {
-    public static AudioStream Coin => ResourceLoader.Load("res://assets/audio/coin.wav") as AudioStream;
-
     public static AudioPlayer Instance { get; private set; }
 
     private List<AudioStreamPlayer2D> AudioPlayers { get; set; }

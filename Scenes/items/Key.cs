@@ -14,6 +14,9 @@ public partial class Key : Area2D
     [Signal]
     public delegate void KeyPickedUpEventHandler(Key key);
 
+    [Export]
+    public AudioStream PickupSound { get; set; }
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -43,7 +46,7 @@ public partial class Key : Area2D
 
         // LevelOverlay levelManager = GetNode<LevelOverlay>("%LevelOverlay");
         // levelManager.IncreaseScore();
-        AudioPlayer.Instance.PlaySound(AudioPlayer.Coin);
+        AudioPlayer.Instance.PlaySound(PickupSound);
         AnimatedSprite2D anim = GetNode<AnimatedSprite2D>("PickupAnim");
         anim.Visible = true;
         anim.Play("default");
