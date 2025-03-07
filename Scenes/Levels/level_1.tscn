@@ -114,7 +114,7 @@ position = Vector2(88, -16)
 
 [node name="key" parent="Keys" index="0" instance=ExtResource("4_rb0md")]
 visible = false
-position = Vector2(408, -16)
+position = Vector2(408, -48)
 
 [node name="Door" parent="." index="8" instance=ExtResource("9_rb0md")]
 z_index = -5
