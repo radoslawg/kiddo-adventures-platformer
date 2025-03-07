@@ -25,6 +25,9 @@ public partial class Player : CharacterBody2D
     public AudioStream JumpSound { get; set; }
 
     [Export]
+    public AudioStream HurtSound { get; set; }
+
+    [Export]
     public float Speed { get; set; } = 300.0f;
 
     [Export]
@@ -210,8 +213,9 @@ public partial class Player : CharacterBody2D
 
     private void ReloadIfOutOfBounds()
     {
-        if (Position.Y > 50)
+        if (Position.Y > 75)
         {
+            AudioPlayer.Instance.PlaySound(HurtSound);
             EmitSignal(nameof(PlayerDie));
         }
     }
