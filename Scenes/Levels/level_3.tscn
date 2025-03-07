@@ -19,7 +19,7 @@ QueuedSongs = Array[ExtResource("2_x1k1j")]([ExtResource("3_4ahh4")])
 [node name="Door" parent="." index="5" instance=ExtResource("5_osqx1")]
 z_index = -5
 position = Vector2(608, -80)
-NextLevel = "uid://0mxfj6r56kcc"
+NextLevel = "uid://bogq5tjrl2dgp"
 
 [node name="Brackeys Tilemap" parent="." index="6" instance=ExtResource("6_sy7oa")]
 z_index = -5
