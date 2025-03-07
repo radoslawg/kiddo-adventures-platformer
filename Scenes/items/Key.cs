@@ -42,10 +42,7 @@ public partial class Key : Area2D
 
     private void KeyPickup()
     {
-        Visible = false;
-
-        // LevelOverlay levelManager = GetNode<LevelOverlay>("%LevelOverlay");
-        // levelManager.IncreaseScore();
+        GetNode<AnimatedSprite2D>("Key").Visible = false;
         AudioPlayer.Instance.PlaySound(PickupSound);
         AnimatedSprite2D anim = GetNode<AnimatedSprite2D>("PickupAnim");
         anim.Visible = true;
