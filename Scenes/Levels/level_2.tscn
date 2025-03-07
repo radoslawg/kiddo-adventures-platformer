@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2raompuw26fq" path="res://Scenes/Levels/LevelBase.tscn" id="1_7qxk6"]
 [ext_resource type="Script" uid="uid://cedytvphyb23e" path="res://assets/Music/OvaniPlugin/OvaniSong.gd" id="2_pnnky"]
 [ext_resource type="PackedScene" uid="uid://c3wcoxotyr6py" path="res://Scenes/Terrain/Brackeys Tilemap.tscn" id="3_8qsmg"]
-[ext_resource type="Resource" uid="uid://bmu4yu0spapki" path="res://assets/Music/End Era (RT 0.462)/End Era.tres" id="3_blpqv"]
+[ext_resource type="Resource" uid="uid://birx7fu56his1" path="res://assets/Music/Ponder (RT 2.474)/Ponder.tres" id="3_pnnky"]
 [ext_resource type="PackedScene" uid="uid://drk6dcthmdffe" path="res://Scenes/Skybox/Clear.tscn" id="4_fphuk"]
 [ext_resource type="PackedScene" uid="uid://c71llytmtkwjj" path="res://Scenes/items/coin.tscn" id="4_ovj6s"]
 [ext_resource type="PackedScene" uid="uid://rcgts4rr6yrx" path="res://Scenes/items/key.tscn" id="5_8qsmg"]
@@ -12,7 +12,7 @@
 [node name="Level2" instance=ExtResource("1_7qxk6")]
 
 [node name="OvaniPlayer" parent="." index="3"]
-QueuedSongs = Array[ExtResource("2_pnnky")]([ExtResource("3_blpqv")])
+QueuedSongs = Array[ExtResource("2_pnnky")]([ExtResource("3_pnnky")])
 
 [node name="Brackeys Tilemap" parent="." index="4" instance=ExtResource("3_8qsmg")]
 z_index = -5
