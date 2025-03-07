@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace org.grzanka.Kiddo.Audio;
+namespace Org.Grzanka.Kiddo.Audio;
 
 using System.Collections.Generic;
 using System.Linq;

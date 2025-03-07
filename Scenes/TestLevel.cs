@@ -4,9 +4,8 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace org.grzanka.Kiddo;
+namespace Org.Grzanka.Kiddo;
 using Godot;
-using Org.Grzanka.Kiddo;
 using System;
 using System.Linq;
 
@@ -30,7 +29,7 @@ public partial class TestLevel : Node2D
             coin.CoinPickedUp += OnCoinCollected;
         }
 
-        foreach (Org.Grzanka.Kiddo.Key key in GetNode<Node>("Keys").GetChildren().OfType<Org.Grzanka.Kiddo.Key>())
+        foreach (Key key in GetNode<Node>("Keys").GetChildren().OfType<Key>())
         {
             AllCoinsCollected += key.MakeVisible;
             key.KeyPickedUp += GetNode<Door>("Door").Open;

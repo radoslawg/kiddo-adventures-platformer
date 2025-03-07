@@ -7,7 +7,7 @@
 namespace Org.Grzanka.Kiddo;
 
 using Godot;
-using org.grzanka.Kiddo.Audio;
+using Org.Grzanka.Kiddo.Audio;
 
 public partial class Key : Area2D
 {

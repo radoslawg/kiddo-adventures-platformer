@@ -6,10 +6,8 @@
 
 namespace Org.Grzanka.Kiddo;
 
-using System.Threading.Tasks;
 using Godot;
-using org.grzanka.Kiddo;
-using org.grzanka.Kiddo.Audio;
+using Org.Grzanka.Kiddo.Audio;
 
 public partial class Coin : Area2D
 {

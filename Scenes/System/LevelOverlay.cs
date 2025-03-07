@@ -4,10 +4,9 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace org.grzanka.Kiddo;
+namespace Org.Grzanka.Kiddo;
 
 using Godot;
-using System;
 
 public partial class LevelOverlay : Node2D
 {
