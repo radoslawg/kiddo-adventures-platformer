@@ -86,7 +86,7 @@ public partial class Player : CharacterBody2D
 
     private void TryChangeState()
     {
-        Vector2 direction = Input.GetVector("move_left", "move_right", "ui_up", "ui_down");
+        float direction = Input.GetAxis("move_left", "move_right");
 
         if (Input.IsActionJustPressed("move_jump") && IsOnFloor())
         {
@@ -106,7 +106,7 @@ public partial class Player : CharacterBody2D
             return;
         }
 
-        if (IsOnFloor() && (direction.X != Vector2.Zero.X || Velocity.X != Vector2.Zero.X))
+        if (IsOnFloor() && (direction != 0 || Velocity.X != 0))
         {
             TransitionTo(State.Walk);
             return;
@@ -179,11 +179,11 @@ public partial class Player : CharacterBody2D
 
     private void HandleWalk(double delta)
     {
-        Vector2 direction = Input.GetVector("move_left", "move_right", "ui_up", "ui_down");
+        float direction = Input.GetAxis("move_left", "move_right");
 
-        if (direction != Vector2.Zero)
+        if (direction != 0)
         {
-            if (direction.X < 0)
+            if (direction < 0)
             {
                 bool flipping = PlayerSprite.Scale.X > 0;
                 if (flipping)
@@ -200,7 +200,7 @@ public partial class Player : CharacterBody2D
                 }
             }
 
-            Velocity = Velocity with { X = direction.X * Speed };
+            Velocity = Velocity with { X = direction * Speed };
         }
         else
         {
