@@ -213,7 +213,7 @@ public partial class Player : CharacterBody2D
 
     private void ReloadIfOutOfBounds()
     {
-        if (Position.Y > 75)
+        if (Position.Y > 120)
         {
             AudioPlayer.Instance.PlaySound(HurtSound);
             EmitSignal(nameof(PlayerDie));
