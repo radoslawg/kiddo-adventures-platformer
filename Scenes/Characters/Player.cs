@@ -64,9 +64,9 @@ public partial class Player : CharacterBody2D
 
     private void TryChangeState()
     {
-        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        Vector2 direction = Input.GetVector("move_left", "move_right", "ui_up", "ui_down");
 
-        if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+        if (Input.IsActionJustPressed("move_jump") && IsOnFloor())
         {
             TransitionTo(State.Jump);
             return;
@@ -139,7 +139,7 @@ public partial class Player : CharacterBody2D
             Velocity += GetGravity() * (float)delta;
         }
 
-        if (Input.IsActionJustPressed("ui_accept") && !DoubleJump)
+        if (Input.IsActionJustPressed("move_jump") && !DoubleJump)
         {
             PlayerSprite.Play("jump");
             DoubleJump = true;
@@ -149,7 +149,7 @@ public partial class Player : CharacterBody2D
 
     private void HandleWalk(double delta)
     {
-        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        Vector2 direction = Input.GetVector("move_left", "move_right", "ui_up", "ui_down");
 
         if (direction != Vector2.Zero)
         {
