@@ -10,6 +10,9 @@ using Org.Grzanka.Kiddo.Audio;
 
 public partial class Player : CharacterBody2D
 {
+    [Signal]
+    public delegate void PlayerDieEventHandler();
+
     private enum State
     {
         Idle,
@@ -32,6 +35,8 @@ public partial class Player : CharacterBody2D
 
     private AnimatedSprite2D PlayerSprite { get; set; }
 
+    private RemoteTransform2D RemoteTransform2D { get; set; }
+
     private State CurrentState { get; set; } = State.Idle;
 
     private bool DoubleJump { get; set; }
@@ -39,6 +44,7 @@ public partial class Player : CharacterBody2D
     public override void _Ready()
     {
         PlayerSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        RemoteTransform2D = GetNode<RemoteTransform2D>("RemoteTransform2D");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -63,6 +69,17 @@ public partial class Player : CharacterBody2D
 
         MoveAndSlide();
         TryChangeState();
+    }
+
+    public void ConnectCamera(Camera2D camera)
+    {
+        if (camera == null)
+        {
+            GD.PrintErr("Camera is null");
+            return;
+        }
+
+        RemoteTransform2D.RemotePath = camera.GetPath();
     }
 
     private void TryChangeState()
@@ -185,9 +202,9 @@ public partial class Player : CharacterBody2D
 
     private void ReloadIfOutOfBounds()
     {
-        if (Position.Y > 150)
+        if (Position.Y > 50)
         {
-            GetTree().ReloadCurrentScene();
+            EmitSignal(nameof(PlayerDie));
         }
     }
 }

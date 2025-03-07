@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://2raompuw26fq"]
+
+[ext_resource type="Script" uid="uid://c7mhudvqb0tf0" path="res://Scenes/Levels/LevelBase.cs" id="1_ami44"]
+[ext_resource type="PackedScene" uid="uid://bfi1xsgbaxkc0" path="res://Scenes/Characters/player.tscn" id="2_encki"]
+[ext_resource type="PackedScene" uid="uid://diuu4aqr5jk7x" path="res://Scenes/System/level_overlay.tscn" id="3_7t6so"]
+
+[node name="LevelBase" type="Node2D"]
+script = ExtResource("1_ami44")
+PlayerScene = ExtResource("2_encki")
+
+[node name="Player" parent="." instance=ExtResource("2_encki")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="LevelOverlay" parent="." instance=ExtResource("3_7t6so")]
+unique_name_in_owner = true
+visible = false
