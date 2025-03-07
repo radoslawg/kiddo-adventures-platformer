@@ -64,6 +64,7 @@ public partial class LevelBase : Node2D
         Player.QueueFree();
         Player = PlayerScene.Instantiate<Player>();
         Player.Position = PlayerSpawnLocation;
+        Player.PlayerDie += OnPlayerDie;
         AddChild(Player);
         ConnectCamera();
     }
