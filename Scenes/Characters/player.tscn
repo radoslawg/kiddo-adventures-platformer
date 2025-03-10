@@ -92,7 +92,7 @@ JumpSound = ExtResource("2_dxpk4")
 HurtSound = ExtResource("3_15c3i")
 Speed = 100.0
 Decelleration = 12.5
-JumpVelocity = -325.0
+JumpVelocity = -265.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.69407e-21, -14)
